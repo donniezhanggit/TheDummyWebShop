@@ -24,9 +24,7 @@ public class WebDriverManager {
   public PageManager page;
   public WebDriverWait wait;
 
-  public WebDriverManager(){
-
-  }
+  public WebDriverManager(){ }
 
   public WebDriver getDriver(){
     return (driver==null)? driver = openBrowser(): driver;
@@ -46,15 +44,14 @@ public class WebDriverManager {
 				System.setProperty("webdriver.chrome.driver", chromeDriverLinux);
 				Log.info("Opening Browser");
 			driver = new ChromeDriver();
-			driver.manage().deleteAllCookies();
 			}
 			if(operatingSystem.equals("Windows")) {
 				System.setProperty("webdriver.chrome.driver", chromeDriverWindows);
 				Log.info("Opening Browser");
 				driver = new ChromeDriver();
-        driver.manage().deleteAllCookies();
 			}
 		}
+		driver.manage().deleteAllCookies();
 		driver.get(url);
 		Log.info("Setting Implicit Wait="+implicitWait);
 		driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
