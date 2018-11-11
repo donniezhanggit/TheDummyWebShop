@@ -1,7 +1,3 @@
-
-Cucumber, Webdriver and Java to handle system tests for TheDummyWebShop a web app that uses Java Spring Boot connected to a DB to create an e-commerce catalog for a web shop with a React front-end.
-
-
 # TheDummyWebShop
 *The DummyWebShop it's a prove of concept inspired by real a scenario based on a previous experience as tester developer.*
 
@@ -18,5 +14,5 @@ Developers will perform unit testing and integration testing locally using conta
 ### Project Structure
 
 This is the repository to handle the system tests for TheDummyWebShop webapp. 
-"# TheDummyWebShop" 
-"# TheDummyWebShop" 
+
+ 
