@@ -1,4 +1,4 @@
-package general;
+package frameworkSetup;
 
 import java.io.File;
 import org.junit.AfterClass;

@@ -1,6 +1,6 @@
-package pages;
+package pageObjects;
 
-import general.WebDriverManager;
+import frameworkSetup.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

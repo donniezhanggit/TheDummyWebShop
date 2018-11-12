@@ -1,6 +1,6 @@
-package general;
+package frameworkSetup;
 
-import pages.LoginPage;
+import pageObjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 
 public class PageManager {
