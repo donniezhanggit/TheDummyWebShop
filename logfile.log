@@ -276,3 +276,19 @@
 2018-11-12 04:36:49,602 INFO  [TestLogging] Loading Property File 
 2018-11-12 04:36:49,650 INFO  [TestLogging] Loading Property File 
 2018-11-12 04:36:49,690 INFO  [TestLogging] Opening Browser 
+2018-11-12 16:11:22,402 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,443 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,465 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,483 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,518 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,537 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:11:22,565 INFO  [TestLogging] Opening Browser 
+2018-11-12 16:11:33,572 INFO  [TestLogging] Setting Implicit Wait = 10 
+2018-11-12 16:14:17,840 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,873 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,898 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,920 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,940 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,960 INFO  [TestLogging] Loading Property File 
+2018-11-12 16:14:17,984 INFO  [TestLogging] Opening Browser 
+2018-11-12 16:14:28,529 INFO  [TestLogging] Setting Implicit Wait = 10 

@@ -1,4 +1,4 @@
-package general;
+package frameworkSetup;
 
 public class ConfigFileManager {
 

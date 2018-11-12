@@ -1,9 +1,9 @@
 package stepDefinitions;
 
 import cucumber.api.java.en.When;
-import general.TestContext;
+import frameworkSetup.TestContext;
 import org.openqa.selenium.By;
-import pages.LoginPage;
+import pageObjects.LoginPage;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
 

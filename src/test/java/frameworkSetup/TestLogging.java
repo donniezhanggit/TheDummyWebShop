@@ -1,4 +1,4 @@
-package general;
+package frameworkSetup;
 
 import org.apache.log4j.Logger;
 
