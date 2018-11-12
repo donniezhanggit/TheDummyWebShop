@@ -1,38 +1,18 @@
 package pages;
 
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
+import general.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends WebDriverManager {
 
-	public WebDriver driver;
-
-	public LoginPage(WebDriver driver) {
-    this.driver = driver;
-  }
+	public LoginPage(WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	public void goToFacebook() {
 	  driver.navigate().to("https://www.facebook.com/");
-	}
-
-	@When("^user logs in using Username as \"([^\"]*)\" and Password as \"([^\"]*)\"$")
-	public void I_enter_Username_as_and_Password_as(String arg1, String arg2) {
-		driver.findElement(By.id("email")).sendKeys(arg1);
-		driver.findElement(By.id("pass")).sendKeys(arg2);
-		driver.findElement(By.id("u_0_v")).click();
-	}
-
-	@Then("^login should be unsuccessful$")
-	public void validateRelogin() {
-		if(driver.getCurrentUrl().equalsIgnoreCase(
-				"https://www.facebook.com/login.php?login_attempt=1&lwv=110")){
-			System.out.println("Test Pass");
-		} else {
-			System.out.println("Test Failed");
-		}
-		driver.close();
 	}
 
 }

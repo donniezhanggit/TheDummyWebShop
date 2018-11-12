@@ -21,11 +21,11 @@ public class ConfigFileReader {
 		try {
 			fis = new FileInputStream(path);
 			try {
-				Log.info("Loading Property File");
+				TestLogging.info("Loading Property File");
 				prop.load(fis);
 			} catch (IOException e) {
 				e.printStackTrace();
-				Log.error("Not able to load Property File");
+				TestLogging.error("Not able to load Property File");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

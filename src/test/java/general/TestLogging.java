@@ -2,15 +2,15 @@ package general;
 
 import org.apache.log4j.Logger;
 
-public class Log {
-	private static Logger Log = Logger.getLogger(Log.class.getName());
+public class TestLogging {
+	private static Logger Log = Logger.getLogger(TestLogging.class.getName());
 
 	public static void startTestCase(String TestCaseName){
-	    Log.info("$$$$$$$$$$$$$$$$$$$$$    " + TestCaseName + "    $$$$$$$$$$$$$$$$$$$$$$$$$");
+	    Log.info("## Test case name: " + TestCaseName + "execution ready to START ##");
 	}
 
-	public static void endTestCase(){
-	    Log.info("XXXXXXXXXXXXXXXXXXXXXXX    " + "-E---N---D-" + "   XXXXXXXXXXXXXXXXXXXXXX");
+	public static void endTestCase(String TestCaseName){
+	    Log.info("## Test case name: " + TestCaseName + "execution FINISHED ##");
 	}
 
 	public static void info(String message) {

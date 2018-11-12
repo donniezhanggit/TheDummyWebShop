@@ -2,7 +2,6 @@ package general;
 
 public class TestContext {
 
-
   private WebDriverManager webDriverManager;
   private PageManager page;
 
