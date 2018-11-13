@@ -31,7 +31,7 @@ public class TestRunner {
 
     @AfterClass
     public static void writeExtentReport(WebDriver driver){
-        Reporter.loadXMLConfig(new File(ConfigFileManager.getInstance().getConfiguration().getExtentReportPath()));
+        Reporter.loadXMLConfig(new File(ConfigFileReader.getConfiguration().getExtentReportPath()));
         TestLogging.info("Closing Browser");
         driver.close();
     }

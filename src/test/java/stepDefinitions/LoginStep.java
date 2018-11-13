@@ -23,7 +23,7 @@ public class LoginStep {
         login.goToFacebook();
     }
 
-    @When("^user logs in using Username as \"([^\"]*)\" and Password as \"([^\"]*)\"$")
+    @When("^user logs in using Username as \"(.*)\" and Password as \"(.*)\"$")
     public void I_enter_Username_as_and_Password_as(String arg1, String arg2) {
         driver.findElement(By.id("email")).sendKeys(arg1);
         driver.findElement(By.id("pass")).sendKeys(arg2);

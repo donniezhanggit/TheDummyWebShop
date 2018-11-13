@@ -1,8 +1,8 @@
 package frameworkSetup;
 
+
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -18,18 +18,17 @@ public class WebDriverManager {
 	public WebDriverManager(){ }
 
 	public WebDriver getDriver(){
-		return (driver==null)? driver = openBrowser(): driver;
+		return (driver == null) ? driver = openBrowser(): driver;
 	}
 
 
 	public WebDriver openBrowser(){
 		String path = System.getProperty("user.dir");
-		String url = ConfigFileManager.getInstance().getConfiguration().getApplicationURL();
-		String browser = ConfigFileManager.getInstance().getConfiguration().getApplicationBrowser();
-		String chromeDriverWindows = path+ConfigFileManager.getInstance().getConfiguration().getChromeDriverPathWindows();
-		String chromeDriverLinux = path+ConfigFileManager.getInstance().getConfiguration().getChromeDriverPathLinux();
-		Long implicitWait = Long.parseLong(ConfigFileManager.getInstance().getConfiguration().getimplicitWait());
-		String operatingSystem=ConfigFileManager.getInstance().getConfiguration().getOS();
+		String url = ConfigFileReader.getConfiguration().getApplicationURL();
+		String browser = ConfigFileReader.getConfiguration().getApplicationBrowser();
+		String chromeDriverWindows = path + ConfigFileReader.getConfiguration().getChromeDriverPathWindows();
+		String chromeDriverLinux = path + ConfigFileReader.getConfiguration().getChromeDriverPathLinux();
+		String operatingSystem=ConfigFileReader.getConfiguration().getOS();
 
 		if(browser.equals("chrome")){
 			if(operatingSystem.equals("Linux")){
@@ -45,19 +44,12 @@ public class WebDriverManager {
 			}
 		}
 		driver.get(url);
-		TestLogging.info("Setting Implicit Wait = " + implicitWait);
-		driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
 		return driver;
 	}
 
 	public void closeBrowser(){
 		TestLogging.info("Closing Browser");
 		driver.close();
-	}
-
-	public void closeAllBrowsers(){
-		TestLogging.info("Closing All Browsers");
-		driver.quit();
 	}
 
 	public void getScreenShot(String testcase){
