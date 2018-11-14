@@ -6,8 +6,12 @@
           <option name="url" value="https://github.com/akshat55narang/TwilightAutomation.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/salvatop/openBerry.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\Users\salvatop\Documents\automation" />
+    <option name="cloneParentDir" value="C:\Users\salvatop\Documents" />
   </component>
 </application>
