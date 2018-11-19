@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.restassured.RestAssured;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -17,7 +16,7 @@ public class DriverProvider {
 
     private WebDriver browserDriver;
     private final String BROWSER = "chrome";
-    private final String APP_URL = RestAssured.baseURI;
+    private final String APP_URL = "http://tutorialsninja.com/demo/";
 
     public DriverProvider() {
         getDriver();

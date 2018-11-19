@@ -14,7 +14,7 @@ public class LoginPage extends AbstractPageObjects {
         this.wb = wb;
     }
 
-    public void goToLogin(String url) {
+    public void goTo(String url) {
         wb.get(url);
     }
 

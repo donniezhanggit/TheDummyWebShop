@@ -14,6 +14,7 @@ public class LoginStep {
     private LoginPage loginPage;
     private UsersService usersService;
     private TestContext testContext;
+    private final String LOGIN = "/index.php?route=account/login";
 
     public LoginStep(TestContext testContext) {
         this.testContext = testContext;
@@ -21,9 +22,9 @@ public class LoginStep {
         usersService = testContext.getPageManager().getUsersServicePage();
     }
 
-    @Given("^I'm on the Login page$")
-    public void goToLoginPage() {
-        loginPage.goToLogin(baseURI + "login");
+    @Given("^I'm on the home page$")
+    public void verifyHomePage(String pageName) {
+        loginPage.verifyPageTitleIs("The Ninja Store");
     }
 
     @Given("^the user (.*) exists on the database$")
@@ -31,7 +32,7 @@ public class LoginStep {
         usersService.verifyUserExists(user);
     }
 
-    @When("^I click on the \"([^\"]*)\" link$")
+    @When("^I click on admin menu link (.*)$")
     public void clickOnLink(String buttonText) {
         loginPage.clickOnLinkWithText(buttonText);
     }
