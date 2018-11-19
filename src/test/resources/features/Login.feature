@@ -1,13 +1,14 @@
-Feature: Login 
-This feature is used to allow only the valid users to log into the application.
+Feature: Login into the application with valid users
 
-@Login
-Scenario Outline: Verify whether user is able to login with Valid Username and Password
-When I navigate to facebook page
+  Background:
+    Given the user "pluto" exists on the database
+    When I click on the "Login" link
+    Then I should be on the "Login" Page
 
-Examples:
-          | username  | password  |
-          | admin     | admin     |
-
-
+  Scenario Outline: Verify whether valid users are able to access the application
+    When I enter valid "<email>" and "<password>"
+    Then I should be logged in with the user "pluto"
+    Examples:
+      | email                 | password |
+      | pluto@domain.com | Password123 |
 
