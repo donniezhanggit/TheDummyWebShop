@@ -33,6 +33,10 @@ public class LoginPage extends AbstractPageObjects {
         waitForElementToBeClickable(By.xpath("//a[text()='" + text + "']")).click();
     }
 
+    public void clickOnLinkMyAccount() {
+        waitForElementToBeClickable(By.xpath("//span[text()='My Account']")).click();
+    }
+
     public void verifyPageTitleIs(String title) {
         Assert.assertTrue(wb.getTitle().contains(title));
     }

@@ -1,5 +1,6 @@
 package Steps;
 
+import FrameworkSetup.RestApi;
 import Pages.Service.UsersService;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -7,14 +8,12 @@ import FrameworkSetup.TestContext;
 import Pages.UI.LoginPage;
 import cucumber.api.java.en.When;
 
-import static io.restassured.RestAssured.baseURI;
-
 
 public class LoginStep {
     private LoginPage loginPage;
     private UsersService usersService;
+    private RestApi restApi;
     private TestContext testContext;
-    private final String LOGIN = "/index.php?route=account/login";
 
     public LoginStep(TestContext testContext) {
         this.testContext = testContext;
@@ -23,7 +22,7 @@ public class LoginStep {
     }
 
     @Given("^I'm on the home page$")
-    public void verifyHomePage(String pageName) {
+    public void verifyHomePage() {
         loginPage.verifyPageTitleIs("The Ninja Store");
     }
 
@@ -35,6 +34,11 @@ public class LoginStep {
     @When("^I click on admin menu link (.*)$")
     public void clickOnLink(String buttonText) {
         loginPage.clickOnLinkWithText(buttonText);
+    }
+
+    @When("^I click on My Account link$")
+    public void clickOnLink() {
+        loginPage.clickOnLinkMyAccount();
     }
 
     @Then("^I should be on the \"([^\"]*)\" Page$")

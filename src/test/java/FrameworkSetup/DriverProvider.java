@@ -12,11 +12,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static FrameworkSetup.RestApi.BASE_URL;
+
 public class DriverProvider {
 
     private WebDriver browserDriver;
     private final String BROWSER = "chrome";
-    private final String APP_URL = "http://tutorialsninja.com/demo/";
 
     public DriverProvider() {
         getDriver();
@@ -34,7 +35,7 @@ public class DriverProvider {
             browserDriver = new FirefoxDriver();
             browserDriver.manage().deleteAllCookies();
         }
-        browserDriver.get(APP_URL);
+        browserDriver.get(BASE_URL);
         browserDriver.manage().window().maximize();
         browserDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return browserDriver;
