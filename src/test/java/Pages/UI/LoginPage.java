@@ -14,7 +14,7 @@ public class LoginPage extends AbstractPageObjects {
         this.wb = wb;
     }
 
-    public void goToLogin(String url) {
+    public void goTo(String url) {
         wb.get(url);
     }
 
@@ -31,6 +31,10 @@ public class LoginPage extends AbstractPageObjects {
 
     public void clickOnLinkWithText(String text) {
         waitForElementToBeClickable(By.xpath("//a[text()='" + text + "']")).click();
+    }
+
+    public void clickOnLinkMyAccount() {
+        waitForElementToBeClickable(By.xpath("//span[text()='My Account']")).click();
     }
 
     public void verifyPageTitleIs(String title) {

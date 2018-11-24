@@ -14,6 +14,10 @@ import java.util.Map;
 
 public class RestApi {
 
+    public static final String LOGIN = "/index.php?route=account/login";
+    public static final String BASE_URL ="http://tutorialsninja.com/demo/";
+
+
     public static RequestSpecification Request;
 
     public RestApi() {

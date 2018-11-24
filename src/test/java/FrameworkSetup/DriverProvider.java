@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.restassured.RestAssured;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,11 +12,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static FrameworkSetup.RestApi.BASE_URL;
+
 public class DriverProvider {
 
     private WebDriver browserDriver;
     private final String BROWSER = "chrome";
-    private final String APP_URL = RestAssured.baseURI;
 
     public DriverProvider() {
         getDriver();
@@ -35,7 +35,7 @@ public class DriverProvider {
             browserDriver = new FirefoxDriver();
             browserDriver.manage().deleteAllCookies();
         }
-        browserDriver.get(APP_URL);
+        browserDriver.get(BASE_URL);
         browserDriver.manage().window().maximize();
         browserDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return browserDriver;
