@@ -4,11 +4,17 @@ import org.openqa.selenium.By;;
 import Pages.AbstractObjectsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public class LoginPage extends AbstractObjectsPage {
 
+    public FluentWait<WebDriver> wait;
+
     public LoginPage(WebDriver browserDriver) {
+        super(browserDriver);
     }
 
     public void goTo(String url) {
@@ -27,11 +33,15 @@ public class LoginPage extends AbstractObjectsPage {
     }
 
     public void clickOnLinkWithText(String text) {
-        waitForElementToBeClickable(By.xpath("//a[text()='" + text + "']")).click();
+        WebElement element = findElement(By.xpath("//a[contains(text(), '" + text + "')]"));
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.click();
     }
 
     public void clickOnLinkMyAccount() {
-        waitForElementToBeClickable(By.xpath("//span[text()='My Account']")).click();
+        //waitForElementToBeClickable(By.xpath("//span[text()='My Account']")).click();
+        WebElement element = findElement(By.xpath("//span[text()='My Account']"));
+        element.click();
     }
 
     public void verifyPageTitleIs(String title) {
