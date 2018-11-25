@@ -1,13 +1,13 @@
 package Pages.Service;
 
-import Pages.AbstractPage;
+import Pages.AbstractObjectsPage;
 import io.restassured.http.ContentType;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.hasItem;
 
-public class UsersService extends AbstractPage {
+public class UsersService extends AbstractObjectsPage {
 
     private final String API = "/api/users";
 

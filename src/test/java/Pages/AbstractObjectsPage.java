@@ -3,7 +3,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 
-public abstract class AbstractPage extends WebdriverPage {
+public abstract class AbstractObjectsPage extends WebdriverPage {
 
     public void sendTextToField(String placeholder, String text) {
         By fieldLocator = By.xpath("//input[@placeholder ='" + placeholder + "']");

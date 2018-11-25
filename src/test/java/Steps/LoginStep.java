@@ -1,5 +1,6 @@
 package Steps;
 
+import FrameworkSetup.DriverProvider;
 import FrameworkSetup.RestApi;
 import Pages.Service.UsersService;
 import cucumber.api.java.en.Given;
@@ -9,10 +10,14 @@ import cucumber.api.java.en.When;
 
 
 public class LoginStep {
+    private DriverProvider browserDriver;
     private LoginPage loginPage;
     private UsersService usersService;
     private RestApi restApi;
 
+    public LoginStep(DriverProvider browserDriver) {
+        loginPage = new LoginPage(browserDriver.getDriver());
+    }
 
     @Given("^I'm on the home page$")
     public void verifyHomePage() {

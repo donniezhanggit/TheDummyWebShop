@@ -1,12 +1,15 @@
 package Pages.UI;
 
 import org.openqa.selenium.By;;
-import Pages.AbstractPage;
+import Pages.AbstractObjectsPage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class LoginPage extends AbstractPage {
+public class LoginPage extends AbstractObjectsPage {
 
+    public LoginPage(WebDriver browserDriver) {
+    }
 
     public void goTo(String url) {
         get(url);
@@ -32,6 +35,7 @@ public class LoginPage extends AbstractPage {
     }
 
     public void verifyPageTitleIs(String title) {
+        System.out.println(getTitle());
         Assert.assertTrue(getTitle().contains(title));
     }
 
