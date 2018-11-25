@@ -3,8 +3,7 @@ package Steps;
 import FrameworkSetup.RestApi;
 import Pages.Service.UsersService;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import FrameworkSetup.TestContext;
+import cucumber.api.java.en.Then;;
 import Pages.UI.LoginPage;
 import cucumber.api.java.en.When;
 
@@ -13,13 +12,7 @@ public class LoginStep {
     private LoginPage loginPage;
     private UsersService usersService;
     private RestApi restApi;
-    private TestContext testContext;
 
-    public LoginStep(TestContext testContext) {
-        this.testContext = testContext;
-        loginPage = testContext.getPageManager().getLoginPage();
-        usersService = testContext.getPageManager().getUsersServicePage();
-    }
 
     @Given("^I'm on the home page$")
     public void verifyHomePage() {

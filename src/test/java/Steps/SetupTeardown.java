@@ -1,12 +1,12 @@
 package Steps;
 
 
+import FrameworkSetup.DriverProvider;
 import FrameworkSetup.RestApi;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import FrameworkSetup.TestContext;
-import io.restassured.RestAssured;
+
 
 
 public class SetupTeardown {
@@ -17,10 +17,10 @@ public class SetupTeardown {
             + separator + "target" + separator + "screnshoots" + separator;
 
     private RestApi restApi;
-    private TestContext testContext;
+    private DriverProvider browserDriver;
 
-    public SetupTeardown(TestContext testContext) {
-        this.testContext = testContext;
+    public SetupTeardown(DriverProvider browserDriver) {
+        this.browserDriver = browserDriver;
         restApi = new RestApi();
     }
 
@@ -35,9 +35,9 @@ public class SetupTeardown {
         System.out.println("************* Ending Scenario: " + scenario.getName() + " **************");
         if (scenario.isFailed()) {
             String fileName = ("screenshotOfFailedScenario-" + scenario.getName() + ".png");
-            testContext.getDriver().takeScrenshoot(SCRENSHOOT_PATH + fileName);
-            testContext.quitDriver();
+            browserDriver.takeScrenshoot(SCRENSHOOT_PATH + fileName);
+            browserDriver.getDriver().quit();
         }
-        testContext.quitDriver();
+        browserDriver.getDriver().quit();
     }
 }
