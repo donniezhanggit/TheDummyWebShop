@@ -1,5 +1,4 @@
 # TheDummyWebShop
-*The DummyWebShop it's a prove of concept inspired by a real scenario based on a previous experience as tester developer.*
 
 **_project summary :_**
 Dummy it's a company who sell equipment for surfers and wants to start an ecommerce activity, the project goal is to create a web shop for their catalogue. It will be choosen Agile scrum as SDLC and to have a two weeks sprint. Every two week there will be demo on the stage enviroment with Stakeholder for accecptance of progress or new developed features.
